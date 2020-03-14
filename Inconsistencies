@@ -34,7 +34,7 @@ Put up tutorials to do the same on the Copyleft Games YouTube channel.
 
 ---
 
-PyDodger 2.0
+PyDodger 2.0 + 3.0
 
 Could not make the title interactive as the PySoy events module (keypress/keyrelease) are purely binded to in-game actions.
 
@@ -43,6 +43,10 @@ Wasn’t able to include mouse pointer integration and controls using the third 
 Recreated the game using first person-player, however the game glitched and stopped working at times. Furthermore, the gameplay wasn’t remotely as good as observable in third-person.
 
 (Potential Issue I might continue facing in the future) Created a Blender 3-D model to implement inside the room, however calling functions and implementing the code for the integration of the model was rather difficult.
+
+
+
+
 
 
 
