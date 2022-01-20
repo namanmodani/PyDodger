@@ -1,6 +1,6 @@
 # PyDodger
 
-Three-staged 3D real-time strategy game in Python on the PySoy cloud engine. Developed as task submissions to Copyleft Games during Google Code-in 2019, mentored by Arc Riley.
+Three-staged 3D real-time strategy game in Python on the PySoy cloud engine. Developed as task submissions to Copyleft Games during Google Code-in 2019. Mentored by Arc Riley.
 
 Software Used: Python3, PySoy, LibSoy, Blender, OpenGL, Mercurial
 
