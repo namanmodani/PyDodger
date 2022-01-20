@@ -2,7 +2,7 @@
  
 # PyDodger by AlphaThesis
  
-#I mports
+# Imports
 import soy
 import sys
 import time
