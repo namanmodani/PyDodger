@@ -1,49 +1,49 @@
 #!/usr/bin/env python3
  
-#PyDodger, by AlphaThesis
+# PyDodger by AlphaThesis
  
-#Imports
+#I mports
 import soy
 import sys
 import time
 from time import sleep
 from random import randint
  
-#Game Status Variables
+# Game Status Variables
 begin = False
 game_in_play = False
 client = soy.Client()
  
-#Start, in order to note time -- the factor that decides the score.
+# Start for time notation
 start = time.time()
  
-#Defining the room - called scene.
+# Defining the room - called scene
 scene = soy.scenes.Room(soy.atoms.Size((15.0, 10.0, 40.0)), 1, 0, 0, 0)
  
-#Defining the first level. Note: Current Version contains only 1 level.
+# Defining the first level. Current version contains only 1 level.
 def level_1():
  
     global client
     global scene
  
-    #Defining material colour of the room
+    # Defining material colour of the room
     scene.material = soy.materials.Colored('black')
  
-    #Defining lights inside the black room
+    # Defining lights inside the black room
     scene['lighting_1'] = soy.bodies.Light((-10, 3, -10))
     scene['lighting_2'] = soy.bodies.Light((10, 3, -10))
     scene['lighting_3'] = soy.bodies.Light((5, 9, -5))
     scene['lighting_4'] = soy.bodies.Light((5, 9, -5))
  
-    #Defining the position of the camera
+    # Defining the position of the camera
     camera = soy.bodies.Camera((0, 1, 20))
     scene['cam'] = camera
     scene['cam'].position = soy.atoms.Position((0, 2, 18))
     scene['cam'].rotation = soy.atoms.Rotation((0, 0, 0.25))
     client.window.append(soy.widgets.Projector(scene['cam']))
  
-    #Defining objects
-    #Object_1: Box with gradient texture
+    # Defining objects
+    # Object_1: Box with gradient texture
  
     object_1 = soy.textures.Texture('./Images/tex1.jpeg')
  
@@ -57,7 +57,7 @@ def level_1():
     scene['object_1_2'].radius = 0.1
     scene['object_1_2'].material = soy.materials.Textured(colormap = object_1)
  
-    #Object_2: Smoothcubes with solid texture
+    # Object_2: Smoothcubes with solid texture
  
     cubemap = soy.textures.Cubemap("checkered", [soy.atoms.Color('firebrick'),
                                        soy.atoms.Color('goldenrod')])
@@ -84,7 +84,7 @@ def level_1():
     scene['object_2_2'].radius = 0.05
     scene['object_2_2'].material = soy.materials.Textured(colormap=svgtex)
  
-    #Object_3: Sphere with checkered texture
+    # Object_3: Sphere with checkered texture
  
     firebrick = soy.atoms.Color('firebrick')
     goldenrod = soy.atoms.Color('goldenrod')
@@ -102,7 +102,7 @@ def level_1():
     scene['object_3_2'].radius = 0.6
     scene['object_3_2'].material = material
  
-    #Object_4: Sphere with graphic textures
+    # Object_4: Sphere with graphic textures
  
     object_4 = soy.textures.Texture('./Images/tex2.jpeg')
  
@@ -112,7 +112,7 @@ def level_1():
     scene['object_4'].radius = 0.6
     scene['object_4'].material = soy.materials.Textured(colormap = object_4)
  
-    #Object_5: Sphere with graphic textures
+    # Object_5: Sphere with graphic textures
  
     object_5 = soy.textures.Texture('./Images/tex3.jpg')
  
@@ -122,7 +122,7 @@ def level_1():
     scene['object_5'].radius = 0.6
     scene['object_5'].material = soy.materials.Textured(colormap = object_5)
  
-    #Player: Wireframed Sphere
+    # Player: Wireframed Sphere
  
     scene['player'] = soy.bodies.Sphere()
     scene['player'].material = soy.materials.Wireframed()
@@ -144,23 +144,23 @@ def level_1():
     scene['object_5'].addForce(randint(-450, 450), randint(-450, 450), randint(-450, 450))
  
  
-    #Defining forces that the player can use
+    # Defining forces that the player can use
     forceR = soy.atoms.Vector((450, 0, 0))
     forceL = soy.atoms.Vector((-450, 0 ,0))
     forceF = soy.atoms.Vector((0, 0, -450))
     forceB = soy.atoms.Vector((0, 0, 450))
  
-    #Using the Thrust attribute
+    # Using the Thrust attribute
     move_right = soy.actions.Thrust(scene['player'], forceR)
     move_left = soy.actions.Thrust(scene['player'], forceL)
     move_forward = soy.actions.Thrust(scene['player'], forceF)
     move_backward = soy.actions.Thrust(scene['player'], forceB)
  
-    #Defining events
+    # Defining events
     soy.events.KeyPress.init()
     soy.events.KeyRelease.init()
  
-    #Defining what actions must be taken when a certain event occurs.
+    # Defining what actions must be taken when a certain event occurs.
     soy.events.KeyPress.addAction("W", move_forward)
     soy.events.KeyRelease.addAction("W", move_backward)
  
@@ -173,11 +173,11 @@ def level_1():
     soy.events.KeyPress.addAction("D", move_right)
     soy.events.KeyRelease.addAction("D", move_left)
  
-#Sorting the elements in an iterable order
+# Sorting the elements in an iterable order
 def check(x, y):
     return sorted(x) == sorted(y)
  
-#Defining what must be displayed if the player is alive, or has lost.
+# Defining what must be displayed if the player is alive, or has lost.
 def w_l():
     global scene
     global game_in_play
@@ -214,7 +214,7 @@ def menu():
     game_in_play = True
     print('PyDodger started!')
  
-#Final running program
+# Final running program
 if __name__ == '__main__':
     while client.window:
         if game_in_play is True and begin is False:
