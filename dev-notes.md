@@ -5,7 +5,7 @@
 ### Session 1
 - Imported required libraries, for instance sys (to add system-specific parameter), sleep (to delay execution), soy, time, randInt.
 - Defined game status variables and the client.
-- Played around with different room sizes to gauge suitability. Defined the camera, material color and lights within the room. Inititated scene.   
+- Played around with different room sizes to gauge suitability. Defined the camera, material color and lights within the room. Initiated scene.   
 
 ### Session 2
 - Defined the first level, using objects inspired by mature examples in the PySoy - to create smoothcubes, svgs, textured gradient boxes, and wireframed spheres.
@@ -24,7 +24,7 @@
 - Designed graphics (using Figma + Canva), for the:
     - title,
     - instructions menu, and 
-    - game over screen.
+    - game-over screen.
 - Altered position of the lights to improve gameroom quality.
 
 ### Session 5
@@ -38,7 +38,6 @@
 - Eliminated the case scenario where the player can leave the confines of the room. Upon strikes against the walls of the room, the player object bounces back like it would in real life. Induced realism.
 - Ensured easy final score visibility on the client window's titlebar, eliminating the requirement to switch to the terminal to check the score.
 - Edited the gameover graphic according to the new final score display. 
-- Edited the README file.
 
 ## Task 3
 
@@ -48,6 +47,7 @@
 - Altered and randomized the speeds of the objects in the game room to make the game more fun-to-play.
 
 ### Session 8
+
 - Added more comments to improve code readability. 
 - Appended a background to the game to induce realism, depicting the universe. This explains the zero gravity objects.
-- Improved processing of the game by refactoring rusty blocks of code. Improved runtime.
+- Improved processing of the game by refactoring rusty blocks of code, and thereby runtime.
